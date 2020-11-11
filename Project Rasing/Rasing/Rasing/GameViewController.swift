@@ -12,6 +12,9 @@ class GameViewController: UIViewController {
     var gameTimer: Timer!
     var carPcTimer: Timer!
     var stateSemafor: Int = 1
+    var gameTime: Timer!
+    var timaLeft = 0
+    
     
     @IBOutlet weak var pcCar: UIImageView!
     @IBOutlet weak var userCar: UIImageView!
@@ -29,23 +32,44 @@ class GameViewController: UIViewController {
     @IBAction func startGameAction(_ sender: UIButton) {
         gameTimer = Timer.scheduledTimer(timeInterval: 3.0, target: self, selector: #selector(intervalTimer), userInfo: nil, repeats: true)
         carPcTimer = Timer.scheduledTimer(timeInterval: 0.5, target: self, selector: #selector(pcDrive), userInfo: nil, repeats: true)
+        gameTimer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(gameTime), userInfo: nil, repeats: true)
+    }
+    
+    @objc func game() {
+        
+    }
+    
+    @IBAction func driveCarAction(_ sender: UIButton) {
+        if stateSemafor == 2 {
+            userCar.center.x += 10
+        }
+        if stateSemafor == 1 {
+            userCar.center.x -= 10
+        }
+        if userCar.center.x > finishLine.center.x {
+            gameTimer.invalidate()
+            carPcTimer.invalidate()
+            gameEnd(message: "You winner!")
+        }
+        
     }
     
     @objc func intervalTimer(){
         stateSemafor += 1
         if stateSemafor > 2 {
             stateSemafor = 1}
-    }
+
     
     switch stateSemafor {
     case 1:
         semaforLable.text = "STOP"
-        semaferLable.textColor = .red
+        semaforLable.textColor = .red
     case 2:
         semaforLable.text = "DRIVE"
         semaforLable.textColor = .green
     default:
         break
+        }
     }
     
     
