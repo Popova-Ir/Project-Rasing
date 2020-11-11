@@ -79,12 +79,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-127" y="-13"/>
+            <point key="canvasLocation" x="902" y="-156"/>
         </scene>
-        <!--View Controller-->
+        <!--Game View Controller-->
         <scene sceneID="7WH-Nw-2h5">
             <objects>
-                <viewController modalPresentationStyle="fullScreen" id="JMi-3f-dIJ" sceneMemberID="viewController">
+                <viewController modalPresentationStyle="fullScreen" id="JMi-3f-dIJ" customClass="GameViewController" customModule="Rasing" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="2S7-Dg-LwW">
                         <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -135,16 +135,26 @@
                                 <state key="normal" title="Drive">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="startGameAction:" destination="JMi-3f-dIJ" eventType="touchUpInside" id="Fla-Cq-F9P"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="35j-YW-Yn6"/>
                         <color key="backgroundColor" red="0.2156862745" green="0.2784313725" blue="0.30980392159999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
                     <navigationItem key="navigationItem" id="ZI6-6w-WA4"/>
+                    <connections>
+                        <outlet property="finishLine" destination="4mN-fa-YPu" id="VAW-fm-HaL"/>
+                        <outlet property="pcCar" destination="NPR-oe-dcP" id="aZp-sH-f6b"/>
+                        <outlet property="semaforLable" destination="EUc-vQ-1N3" id="asy-As-hFj"/>
+                        <outlet property="timerLable" destination="0HC-Cm-g9d" id="6Cu-BH-wk5"/>
+                        <outlet property="userCar" destination="4Js-Xl-Xyn" id="vdA-U4-53E"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wBM-nk-SQR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-236.13281249999997" y="632.8125"/>
+            <point key="canvasLocation" x="902" y="591"/>
         </scene>
     </scenes>
     <resources>
