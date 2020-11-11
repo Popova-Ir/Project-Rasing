@@ -14,6 +14,7 @@
 		CEF9137D255BC3AF0032990E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CEF9137C255BC3AF0032990E /* Assets.xcassets */; };
 		CEF91380255BC3AF0032990E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEF9137E255BC3AF0032990E /* LaunchScreen.storyboard */; };
 		CEF91389255BD6780032990E /* MyButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF91388255BD6780032990E /* MyButton.swift */; };
+		CEF9138C255BF7F10032990E /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF9138B255BF7F10032990E /* GameViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		CEF9137F255BC3AF0032990E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CEF91381255BC3AF0032990E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CEF91388255BD6780032990E /* MyButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyButton.swift; sourceTree = "<group>"; };
+		CEF9138B255BF7F10032990E /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +64,7 @@
 				CEF91375255BC3A90032990E /* SceneDelegate.swift */,
 				CEF91377255BC3A90032990E /* ViewController.swift */,
 				CEF91379255BC3A90032990E /* Main.storyboard */,
+				CEF9138B255BF7F10032990E /* GameViewController.swift */,
 				CEF91388255BD6780032990E /* MyButton.swift */,
 				CEF9137C255BC3AF0032990E /* Assets.xcassets */,
 				CEF9137E255BC3AF0032990E /* LaunchScreen.storyboard */,
@@ -140,6 +143,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CEF9138C255BF7F10032990E /* GameViewController.swift in Sources */,
 				CEF91378255BC3A90032990E /* ViewController.swift in Sources */,
 				CEF91374255BC3A90032990E /* AppDelegate.swift in Sources */,
 				CEF91376255BC3A90032990E /* SceneDelegate.swift in Sources */,
