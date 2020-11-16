@@ -13,7 +13,7 @@ class GameViewController: UIViewController {
     var carPcTimer: Timer!
     var stateSemafor: Int = 1
     var gameTime: Timer!
-    var timaLeft = 0
+    var timeLeft = 0
     
     
     @IBOutlet weak var pcCar: UIImageView!
@@ -24,7 +24,8 @@ class GameViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        userCar.image = UIImage (named: userCarImage)
+ 
         // Do any additional setup after loading the view.
     }
     
@@ -32,11 +33,12 @@ class GameViewController: UIViewController {
     @IBAction func startGameAction(_ sender: UIButton) {
         gameTimer = Timer.scheduledTimer(timeInterval: 3.0, target: self, selector: #selector(intervalTimer), userInfo: nil, repeats: true)
         carPcTimer = Timer.scheduledTimer(timeInterval: 0.5, target: self, selector: #selector(pcDrive), userInfo: nil, repeats: true)
-        gameTimer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(gameTime), userInfo: nil, repeats: true)
+        gameTimer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(game), userInfo: nil, repeats: true)
     }
     
     @objc func game() {
-        
+        timeLeft += 1
+        timerLable.text = String(timeLeft)
     }
     
     @IBAction func driveCarAction(_ sender: UIButton) {
@@ -47,8 +49,6 @@ class GameViewController: UIViewController {
             userCar.center.x -= 10
         }
         if userCar.center.x > finishLine.center.x {
-            gameTimer.invalidate()
-            carPcTimer.invalidate()
             gameEnd(message: "You winner!")
         }
         
@@ -79,17 +79,20 @@ class GameViewController: UIViewController {
             pcCar.center.x += 10
     }
         if pcCar.center.x > finishLine.center.x {
-            gameTimer.invalidate()
-            carPcTimer.invalidate()
             gameEnd(message: "You lose")
         }
     }
         
     func gameEnd(message: String) {
+        gameTimer.invalidate()
+        carPcTimer.invalidate()
+        gameTime.invalidate()
+        
         let alert = UIAlertController(title: "Game End", message: message, preferredStyle: .alert)
         let okAction = UIAlertAction(title: "Ok", style: .default, handler: nil)
         alert.addAction(okAction)
         self.present(alert, animated: true, completion: nil)
+        results.append(resultData(playerName: "me", resultGame: message, timeGame: String(timeLeft)))
     }
     /*
     // MARK: - Navigation
