@@ -182,6 +182,7 @@
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="gameResult" destination="h9t-uR-jyt" id="91Y-gW-9ws"/>
+                                    <outlet property="namePlayer" destination="Cnm-ag-wDP" id="h6i-Pk-lVz"/>
                                     <outlet property="playerName" destination="Cnm-ag-wDP" id="ZLy-jS-GDr"/>
                                     <outlet property="timeResult" destination="NoB-jo-G3S" id="CFV-lo-wKw"/>
                                 </connections>

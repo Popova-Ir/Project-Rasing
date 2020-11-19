@@ -49,6 +49,7 @@ class GameViewController: UIViewController {
             userCar.center.x -= 10
         }
         if userCar.center.x > finishLine.center.x {
+         
             gameEnd(message: "You winner!")
         }
         
@@ -79,6 +80,8 @@ class GameViewController: UIViewController {
             pcCar.center.x += 10
     }
         if pcCar.center.x > finishLine.center.x {
+            gameTimer.invalidate()
+            carPcTimer.invalidate()
             gameEnd(message: "You lose")
         }
     }

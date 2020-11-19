@@ -23,6 +23,8 @@ class ViewController: UIViewController {
     @IBAction func settingAction(_ sender: Any) {
         
         let alert = UIAlertController(title: "Settings name", message: "Enter player nickname. \n Nickname is now: \(playerName)", preferredStyle: .alert)
+        
+        
         alert.addTextField { (textField) in
             textField.placeholder = "Player name"
         }
